@@ -1,0 +1,161 @@
+@use "./scss/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 100%;
+
+  @include tablet {
+    font-size: 80%;
+  }
+
+  @include mobile {
+    font-size: 60%;
+  }
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 1.5;
+
+  background-color: $body-bg;
+  color: $txt-color;
+
+  @include mobile {
+    morgin-bottom: 3rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: $main-color;
+  }
+}
+
+button,
+input {
+  outline: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+.container {
+  max-width: 1660px;
+  margin: auto;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.section {
+  padding: 0 2rem;
+}
+
+.section__header {
+  @include flex(center, space-between);
+}
+
+.title-category {
+  @include flex(center, center);
+
+  transition: opacity 0.2s ease;
+  -webkit-transition: -webkit-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+  transition: -webkit-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+  -o-transition: -o-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+  -moz-transition: transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s,
+    -moz-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+  transition: transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+  transition: transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s,
+    -webkit-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s,
+    -moz-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s,
+    -o-transform 0.54s cubic-bezier(0.5, 0, 0.1, 1) 0s;
+
+  &__all {
+    color: unset;
+    display: inline-block;
+    font-size: 0.9vw;
+    margin-right: 4px;
+    max-width: 0;
+    line-height: 0.8vw;
+    -webkit-transition: max-width 1s, opacity 1s, -webkit-transform 750ms;
+    transition: max-width 1s, opacity 1s, -webkit-transform 750ms;
+    -o-transition: max-width 1s, opacity 1s, -o-transform 750ms;
+    -moz-transition: max-width 1s, opacity 1s, transform 750ms,
+      -moz-transform 750ms;
+    transition: max-width 1s, opacity 1s, transform 750ms;
+    transition: max-width 1s, opacity 1s, transform 750ms,
+      -webkit-transform 750ms, -moz-transform 750ms, -o-transform 750ms;
+    white-space: nowrap;
+    vertical-align: bottom;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  &__icon {
+    color: unset;
+
+    display: none;
+    -webkit-transition: -webkit-transform 750ms;
+    transition: -webkit-transform 750ms;
+    -o-transition: -o-transform 750ms;
+    -moz-transition: transform 750ms, -moz-transform 750ms;
+    transition: transform 750ms;
+    transition: transform 750ms, -webkit-transform 750ms, -moz-transform 750ms,
+      -o-transform 750ms;
+    vertical-align: bottom;
+  }
+
+  &:hover &__icon {
+    color: $white;
+
+    -webkit-transform: translate(1vw, 0);
+    -moz-transform: translate(1vw, 0);
+    -ms-transform: translate(1vw, 0);
+    -o-transform: translate(1vw, 0);
+    transform: translate(1vw, 0);
+    font-size: 2rem !important;
+    line-height: 0.8vw;
+    display: inline-block;
+    font-size: 0.9vw;
+    // vertical-align: bottom;
+  }
+
+  &:hover &__all {
+    color: $white;
+    max-width: 200px;
+    -webkit-transform: translate(1vw, 0);
+    -moz-transform: translate(1vw, 0);
+    -ms-transform: translate(1vw, 0);
+    -o-transform: translate(1vw, 0);
+    transform: translate(1vw, 0);
+    opacity: 1;
+  }
+}

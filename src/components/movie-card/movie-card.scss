@@ -1,0 +1,62 @@
+@use "../../scss/" as *;
+
+.swiper-slide:first-child {
+  &:hover {
+    .movie-card {
+      transform-origin: left;
+    }
+  }
+}
+.movie-card {
+  height: 415px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 20px 0px;
+  border-radius: $border-radius-small;
+
+  img {
+    transition: all 0.2s ease;
+    border-radius: $border-radius-small;
+  }
+
+  .content {
+    display: none;
+    @include flex(center, center);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    transform: scale(0);
+    transition-duration: .2s;
+    opacity: 0;
+    padding: 40px 10px 10px 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    &__video{
+      width:1000px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+      z-index: 5;
+      box-shadow: $box-shadow-card;
+      .content {
+        transition-delay: 0.5s;
+        transform: scale(1);
+        transform-origin: center center;
+        opacity: 1;
+      }
+    }
+  }
+}
