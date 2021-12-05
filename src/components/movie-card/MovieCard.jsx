@@ -46,7 +46,7 @@ export default function MovieCard(props) {
                     src={onEnter}
                     ref={iframeRef}
                     width="100%"
-                    height="300px"
+                    height="250px"
                     title="video"
                     frameborder="0"
                     allow="autoplay; picture-in-picture"

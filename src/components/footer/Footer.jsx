@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.scss';
 import bg from './../../assets/footer-bg.jpg';
-import logo from './../../assets/tmovie.png';
+import logo from './../../assets/topmovie.svg';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
