@@ -1,5 +1,9 @@
 @use "../../scss/" as *;
 
+
+.swiper-container{
+  overflow: visible;
+}
 .swiper-slide:first-child {
   &:hover {
     .movie-card {
@@ -8,7 +12,7 @@
   }
 }
 .movie-card {
-  height: 415px;
+  height: 450px;
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -18,45 +22,98 @@
   margin: 20px 0px;
   border-radius: $border-radius-small;
 
-  img {
-    transition: all 0.2s ease;
-    border-radius: $border-radius-small;
-  }
-
   .content {
-    display: none;
-    @include flex(center, center);
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    @include flex(center, flex-end);
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
+    height: 450px;
+    top: 0;
     left: 0;
-    right:0;
-    bottom: 0;
     transform: scale(0);
-    transition-duration: .2s;
+    transition-duration: 0.2s;
     opacity: 0;
-    padding: 40px 10px 10px 10px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 8px;
+    &__video {
+      width: 100%;
+      height: 100%;
+    }
 
-    &__video{
-      width:1000px;
+    &__info {
+      @include flex(center, center);
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      &__detail {
+        @include flex(center, space-between);
+        gap: 20px;
+        border-top: 1px solid #7c7c7c;
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+
+        &__vote {
+          margin: 1rem 0;
+        }
+
+        &__go {
+          @include flex(center, center);
+          height: 35px;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          width: 35px;
+          & i {
+            line-height: 3;
+          }
+          &:hover {
+            background-color: $white;
+            color: $black;
+          }
+        }
+      }
     }
   }
 
   @media (hover: hover) {
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.3);
       z-index: 5;
       box-shadow: $box-shadow-card;
+      color: $white;
       .content {
         transition-delay: 0.5s;
         transform: scale(1);
         transform-origin: center center;
         opacity: 1;
+        &__video {
+          transition-delay: 0.5s;
+          transform: scale(1);
+          transform-origin: center center;
+          opacity: 1;
+        }
       }
     }
   }
+
+  @include tablet {
+    height: 500px;
+    margin: 0px;
+    .content {
+      height: 500px;
+    }
+  }
+  @include mobile {
+    height: 250px;
+    margin: 0px;
+    .content {
+      height: 250px;
+    }
+  }
+}
+.ytp-watermark:hover {
+  opacity: 0!important;
+}
+a.ytp-watermark .yt-uix-sessionlink .ytp-watermark-small > svg, .ytp-hide-controls:not(.ytp-mweb-player) .ytp-watermark svg, .html5-video-player:not(.ytp-mweb-player) .ytp-watermark svg{
+  display: none!important;
 }

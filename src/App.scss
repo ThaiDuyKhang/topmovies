@@ -11,6 +11,7 @@
 
 html {
   font-size: 100%;
+  overflow-x: hidden;
 
   @include tablet {
     font-size: 80%;
