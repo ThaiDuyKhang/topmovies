@@ -15,10 +15,12 @@ html {
 
   @include tablet {
     font-size: 80%;
+    overflow-x: hidden;
   }
 
   @include mobile {
     font-size: 60%;
+    overflow-x: hidden;
   }
 }
 

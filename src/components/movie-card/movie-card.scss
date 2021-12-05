@@ -2,6 +2,12 @@
 
 .swiper-container {
   overflow: visible;
+  @include tablet {
+    overflow: hidden;
+  }
+  @include mobile {
+    overflow: hidden;
+  }
 }
 .swiper-slide:first-child {
   &:hover {
